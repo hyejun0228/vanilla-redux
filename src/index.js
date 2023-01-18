@@ -6,12 +6,13 @@ const number = document.querySelector("span");
 //getElementById : id으로 HTML불러올 수 있음
 //querySelector : 태그로 HTML 불러올 수 있음
 const countModifier = (count = 0, action) => {
-  if (action.type === "ADD"){
-    return count + 1;
-  }else if(action.type === "MINUS"){
-    return count - 1;
-  }else { 
-    return count;
+  switch(action.type){
+    case "ADD":
+      return count + 1;
+    case "MINUS":
+      return count - 1;
+    default:
+      return count;
   }
 };
 
